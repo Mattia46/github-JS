@@ -25,24 +25,29 @@ describe('GitUserSearchController', function() {
         "avatar_url": "https://avatars.githubusercontent.com/u/196474?v=3",
         "html_url": "https://github.com/stephenlloyd"
       }
-    ];
+      ];
 
-    var httpBackend;
-    beforeEach(inject(function($httpBackend) {
-      httpBackend = $httpBackend;
-      httpBackend
-        .when("GET", "https://api.github.com/search/users?q=hello")
+      var httpBackend;
+      beforeEach(inject(function($httpBackend) {
+        httpBackend = $httpBackend;
+        httpBackend
+        .expectGET("https://api.github.com/search/users?q=hello")
         .respond(
           { items: items }
         );
-    }));
+      }));
 
-    it('displays search results', function() {
-      ctrl.searchTerm = 'hello';
-      ctrl.doSearch();
-      httpBackend.flush();
-      expect(ctrl.searchResult.items).toEqual(items);
+      afterEach(function(){
+        httpBackend.verifyNoOutstandingExpectation();
+        httpBackend.verifyNoOutstandingRequest();
+      });
+
+      it('displays search results', function() {
+        ctrl.searchTerm = 'hello';
+        ctrl.doSearch();
+        httpBackend.flush();
+        expect(ctrl.searchResult.items).toEqual(items);
+      });
     });
-  });
 
-});
+  });
