@@ -25,7 +25,8 @@
 
     <ul class='list-group'>
       <li class="list-group-item" ng-repeat='item in searchCtrl.searchResult.items'>
-        <a href='{{item.html_url }}' ><img ng-src='{{item.avatar_url }}'> {{
+        <a href='{{item.html_url }}' ><img ng-src='{{item.avatar_url }}&s=50'
+          width=60px> {{
           item.login }}</a>
       </li>
     </ul>
