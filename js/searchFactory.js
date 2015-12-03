@@ -4,6 +4,7 @@ githubUserSearch.factory('Search', ['$http', function($http) {
 
   return {
     query: function(searchTerm) {
+      debugger;
       return $http ({
         url: queryUrl,
         methed: 'GET',
