@@ -25,6 +25,14 @@ describe('GitHub profile finder', function() {
     expect(profiles.last().getText()).toEqual('Mattia46');
   });
 
+  it('finds the profiles who corresponds to Mattia46j', function() {
+    searchBox.sendKeys('Mattia');
+    searchButton.click();
+
+    var profiles = element.all(by.repeater('item in searchCtrl.searchResult.items'));
+    expect(profiles.get(12).getText()).toEqual('Mattia46');
+  });
+
   it('finds 30 profiles called Mattia', function() {
     searchBox.sendKeys('Mattia');
     searchButton.click();
