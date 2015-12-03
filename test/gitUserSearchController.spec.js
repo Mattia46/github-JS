@@ -3,31 +3,45 @@ describe('GitUserSearchController', function() {
 
   var ctrl;
 
-  beforeEach(inject(function($controller) {
-    ctrl = $controller('GitUserSearchController');
-  }));
+  var scope; //
+  var searchSpy = jasmine.createSpyObj('searchSpy', ['query']); //
 
-  it('initialises with an empty search result and term', function() {
-    expect(ctrl.searchResult).toBeUndefined();
-    expect(ctrl.searchTerm).toBeUndefined();
+beforeEach(inject(function($rootScope, $controller, $q) {
+
+  scope = $rootScope.$new(); //
+
+  ctrl = $controller('GitUserSearchController', {
+    $scope: scope,
+    Search:  searchSpy
+  });
+}));
+
+it('initialises with an empty search result and term', function() {
+  expect(ctrl.searchResult).toBeUndefined();
+  expect(ctrl.searchTerm).toBeUndefined();
+});
+
+describe('when searching for a user', function() {
+
+  //beforeEach(inject(backendHelper)); // inject the dummy item dall'testHelper
+
+  //afterEach(function(){
+    //httpBackend.verifyNoOutstandingExpectation();
+    //httpBackend.verifyNoOutstandingRequest();
+  //});
+
+  it('displays search results', function() {
+    ctrl.searchTerm = 'hello';
+
+    inject(function($q) {
+      searchSpy.query.and.returnValue($q.when({data: {items: items}}));
+      });
+      ctrl.doSearch();
+      scope.$apply();
+      //httpBackend.flush();
+      expect(ctrl.searchResult.items).toEqual(items);
+    });
+
   });
 
-  describe('when searching for a user', function() {
-
-    beforeEach(inject(backendHelper)); // inject the dummy item dall'testHelper
-
-            afterEach(function(){
-              httpBackend.verifyNoOutstandingExpectation();
-              httpBackend.verifyNoOutstandingRequest();
-            });
-
-            it('displays search results', function() {
-              ctrl.searchTerm = 'hello';
-              ctrl.doSearch();
-              httpBackend.flush();
-              expect(ctrl.searchResult.items).toEqual(items);
-            });
-
-          });
-
-        });
+});

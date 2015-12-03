@@ -2,7 +2,7 @@ describe('factory: Search', function() {
 
   var search;
 
-  beforeEach(module('GitUserSearch'));
+  beforeEach(module('GitUserSearch')); //nome dell'app la quale puo avere molti controllers
 
   beforeEach(inject(function(Search) {
     search = Search;
