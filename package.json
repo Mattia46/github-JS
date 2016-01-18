@@ -1,7 +1,6 @@
 {
   "name": "githubprofile",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +16,7 @@
   },
   "homepage": "https://github.com/mattia46/githubChallengeJS#readme",
   "devDependencies": {
+    "bootstrap": "^3.3.6",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.15",
     "karma-chrome-launcher": "^0.2.1",
@@ -28,5 +28,6 @@
   },
   "dependencies": {
     "http-server": "^0.8.5"
-  }
+  },
+  "description": ""
 }
