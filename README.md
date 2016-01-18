@@ -3,6 +3,11 @@
 If you want to see the project visit this link:
 https://github-seach.herokuapp.com/
 
+If you wanto to run it locally run:
+```
+$ open public/index.html
+```
+
 You can search for any existing Github user.
 
 To run the Karma test:
