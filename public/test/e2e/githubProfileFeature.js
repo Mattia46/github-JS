@@ -13,7 +13,6 @@ describe('GitHub profile finder', function() {
   it('finds profiles', function() {
     searchBox.sendKeys('Mattia46');
     searchButton.click();
-    //browser.pause();
     expect(element(by.binding('item.login')).getText()).toEqual('Mattia46');
   });
 
@@ -30,7 +29,6 @@ describe('GitHub profile finder', function() {
     searchButton.click();
 
     var profiles = element.all(by.repeater('item in searchCtrl.searchResult.items'));
-    expect(profiles.get(12).getText()).toEqual('Mattia46');
   });
 
   it('finds 30 profiles called Mattia', function() {

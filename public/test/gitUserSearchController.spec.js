@@ -23,14 +23,7 @@ it('initialises with an empty search result and term', function() {
 
 describe('when searching for a user', function() {
 
-  //beforeEach(inject(backendHelper)); // inject the dummy item dall'testHelper
-
-  //afterEach(function(){
-    //httpBackend.verifyNoOutstandingExpectation();
-    //httpBackend.verifyNoOutstandingRequest();
-  //});
-
-  it('displays search results', function() {
+    it('displays search results', function() {
     ctrl.searchTerm = 'hello';
 
     inject(function($q) {
@@ -38,7 +31,6 @@ describe('when searching for a user', function() {
       });
       ctrl.doSearch();
       scope.$apply();
-      //httpBackend.flush();
       expect(ctrl.searchResult.items).toEqual(items);
     });
 
