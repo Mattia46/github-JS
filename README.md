@@ -4,7 +4,7 @@ An app to perform a search through github profiles and retrieve all users resear
 
 ## Objectives of exercise
 This project was an introduction on javascript and how to test it with Jasmine framwork and Protractor for 
-the funtional test
+the funtional test as well as mocking the http request
 
 ## Heroku
 https://github-seach.herokuapp.com/
