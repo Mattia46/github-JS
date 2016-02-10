@@ -19,7 +19,7 @@ $ open public/index.html
 ```
 $ git clone https://github.com/Mattia46/github-JS
 $ npm install
-$ karma start test/karma.conf.js
+$ karma start public/test/karma.conf.js
 ```
 ## How to run funtional test
 ```
