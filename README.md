@@ -1,24 +1,29 @@
-# githubChallengeJS
+# GithubChallenge
+An app to perform a search through github profiles and retrieve all users researched
 
-If you want to see the project visit this link:
+
+## Objectives of exercise
+This project was an introduction on javascript and how to test it with Jasmine framwork and Protractor for 
+the funtional test as well as mocking the http request
+
+## Heroku
 https://github-seach.herokuapp.com/
 
-You can search for any existing Github user.
 
-To run the Karma test:
-
-*If you don't have Karma installed in your system run:*
+## How to run it locally run:
 ```
-$ sudo npm install -g karma-cli
+$ open public/index.html
 ```
 
-*If you already have Karma installed:*
+## How to run the unit test
 ```
 $ git clone https://github.com/Mattia46/github-JS
 $ npm install
+$ karma start public/test/karma.conf.js
 ```
-Move into public folder and run:
+## How to run funtional test
 ```
-karma start test/karma.conf.js
+$ http-server
+$ webdriver-manager start
+$ protractor start test/e2e/conf.js
 ```
-
